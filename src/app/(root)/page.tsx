@@ -8,13 +8,13 @@ import Link from "next/link"
 export default function Home() {
   
   return (
-    <main className="bg-[#000000] font-poppins">
+    <main className="bg-white font-poppins">
       {/* Hero Section */}
       <section className="relative flex h-[80vh] w-full items-center justify-center min-w-[400px]">
         
         <div className="z-30 w-[90%] max-w-[1200px] pt-4">
           <h1 className="text-center text-[2.3rem] font-bold leading-tight md:text-[3.2rem] md:leading-none lg:text-[4rem] 2xl:text-[4.5rem]">
-            <span className="text-white">
+            <span className="text-black">
               Learn Cryptography
             </span>
             <br />
