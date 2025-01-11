@@ -2,6 +2,7 @@ import NavigationBar from "../components/nav-bar";
 import Tabs from "../components/tabs";
 import { Metadata } from "next";
 import "../globals.css";
+import { Poppins } from "next/font/google";
 
 export const metadata: Metadata = {
   title: "Learn Cryptography | Introduction",

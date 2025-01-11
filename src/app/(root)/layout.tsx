@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "../globals.css";
 import NavigationBar from "../components/nav-bar";
+//import { Poppins } from "next/font/google";
 
 export const metadata: Metadata = {
   title: "Learn Cryptography",

@@ -12,9 +12,11 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         primary: "#04AA6D",
-        "secondary": "#282A35",
-        "accent": "#FFD900",
-
+        secondary: "#282A35",
+        accent: "#FFD900",
+      },
+      fontFamily: {
+        sans: ["Poppins", "sans-serif"],
       },
     },
   },

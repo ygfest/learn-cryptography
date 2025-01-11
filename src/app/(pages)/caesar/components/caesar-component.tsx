@@ -56,12 +56,10 @@ const CaesarCipher = () => {
 
       <main className="mx-w-4xl mx-auto">
         <section className="bg-white p-6 rounded-lg shadow-md mt-8">
-          <h2 className="text-2xl font-semibold mb-4">
+          <p className="text-2xl font-semibold mb-4">
             Importance of Cryptography
-          </h2>
-        </section>
+          </p>
 
-        <section className="bg-white p-6 rounded-lg shadow-md mt-8">
           <ul className="mb-4">
             <li>
               <span>
