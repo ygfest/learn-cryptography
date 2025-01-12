@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "../globals.css";
 import NavigationBar from "../components/nav-bar";
 //import { Poppins } from "next/font/google";
+import Footer from "../components/footer";
 
 export const metadata: Metadata = {
   title: "Learn Cryptography",
@@ -19,6 +20,7 @@ export default function RootLayout({
       <body>
         <NavigationBar />
         {children}
+        <Footer />
       </body>
     </html>
   );

@@ -84,9 +84,9 @@ const AffineCipher: React.FC = () => {
 
       <main className="max-w-4xl mx-auto">
         <section className="bg-white p-6 rounded-lg shadow-md">
-          <h2 className="text-2xl font-semibold mb-4">
+          <p className="text-2xl font-semibold mb-4">
             What is the Affine Cipher?
-          </h2>
+          </p>
           <p className="mb-4">
             The Affine cipher is a monoalphabetic substitution cipher that maps
             each letter in an alphabet to its numeric equivalent, encrypts it
@@ -115,19 +115,17 @@ const AffineCipher: React.FC = () => {
           />
         </section>
 
-        <section className="mt-10 bg-white p-6 rounded-lg shadow-md">
-          <h2 className="text-2xl font-semibold mb-4 text-center">
-            Try It Yourself
-          </h2>
-          <div className="space-y-6">
-            <div>
+        <section className="mt-10 bg-white p-6 rounded-lg shadow-md text-center flex justify-center flex-col items-center">
+          <p className="text-2xl font-semibold mb-4">Try It Yourself</p>
+          <div className="space-y-6 w-2/3">
+            <div className="flex flex-col justify-center items-center">
               <label className="block font-medium mb-2" htmlFor="textToEncrypt">
                 Enter Text to Encrypt:
               </label>
               <input
                 type="text"
                 id="textToEncrypt"
-                className="w-full p-3 border rounded-md"
+                className="w-full p-3 border rounded-md "
                 value={textToEncrypt}
                 onChange={(e) => setTextToEncrypt(e.target.value)}
               />
@@ -145,7 +143,7 @@ const AffineCipher: React.FC = () => {
             )}
           </div>
 
-          <div className="space-y-6 mt-8">
+          <div className="space-y-6 mt-8 w-2/3">
             <div>
               <label className="block font-medium mb-2" htmlFor="textToDecrypt">
                 Enter Text to Decrypt:
@@ -172,10 +170,6 @@ const AffineCipher: React.FC = () => {
           </div>
         </section>
       </main>
-
-      <footer className="mt-10 text-center text-gray-500">
-        © 2024 Affine Cipher Guide
-      </footer>
     </div>
   );
 };

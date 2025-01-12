@@ -2,7 +2,7 @@ import Footer from "@/app/components/footer";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Learn Cryptogrpahy | Affine",
+  title: "Learn Cryptogrpahy | Autokey Cipher",
   description: "Built by Stefano",
 };
 

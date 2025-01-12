@@ -17,7 +17,7 @@ const Tabs = () => {
         <Link href="autokey">
           <li>Auto Key Cipher</li>
         </Link>
-        <Link href="monoalphabetic">
+        <Link href="mono-alphabetic">
           <li>Monoalphabetic Cipher</li>
         </Link>
         <Link href="playfair">
