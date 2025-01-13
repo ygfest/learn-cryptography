@@ -78,56 +78,52 @@ const MonoalphabeticCipher: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50 text-gray-800 p-6">
       <header className="bg-white shadow-md p-4 mb-6">
-        <h1 className="text-3xl font-bold text-center">
-          Monoalphabetic Cipher
-        </h1>
+        <p className="text-3xl font-bold text-center">Monoalphabetic Cipher</p>
       </header>
 
       <main className="max-w-4xl mx-aut">
-        <div className="mb-8 w-full max-w-4xl bg-gray-200 p-6 rounded-lg">
-          <section className="bg-white p-6 rounded-lg shadow-md">
-            <h2 className="text-xl font-semibold mb-4">Example</h2>
-            <p className="text-gray-700 mb-4">
-              Given plain text, the task is to implement the Monoalphabetic
-              Cipher.
-            </p>
-            <div className="bg-gray-100 p-4 rounded-lg text-center">
-              <p>
-                <strong>Text:</strong> Welcome
-              </p>
-              <p>
-                <strong>Key:</strong> QWERTYUIOPASDFGHJKLZXCVBNM
-              </p>
-              <p>
-                <strong>Encrypted message:</strong> VTSEGDT
-              </p>
-            </div>
-          </section>
-        </div>
-
-        <div className="bg-white shadow-md rounded-lg p-6 w-full max-w-lg">
-          <p className="mb-4 text-gray-700">
+        <section className="bg-white p-6 rounded-lg shadow-md ">
+          <p className="mb-4 ">
             Monoalphabetic Cipher is a cipher where the letters of the plain
             text are mapped to ciphertext letters based on a single alphabetic
             key. It is a one-to-one mapping.
           </p>
 
-          <div className="flex flex-col gap-4">
-            <div>
-              <label
-                htmlFor="text"
-                className="block font-medium text-gray-600 mb-1"
-              >
-                Enter Text:
-              </label>
-              <input
-                type="text"
-                id="text"
-                value={text}
-                onChange={(e) => setText(e.target.value)}
-                className="w-full p-2 border border-gray-300 rounded-md"
-              />
-            </div>
+          <h2 className="text-xl font-semibold mb-4">Example</h2>
+          <p className="mb-4">
+            Given plain text, the task is to implement the Monoalphabetic
+            Cipher.
+          </p>
+          <div className="bg-gray-100 p-4 rounded-lg text-center">
+            <p>
+              <strong>Text:</strong> Welcome
+            </p>
+            <p>
+              <strong>Key:</strong> QWERTYUIOPASDFGHJKLZXCVBNM
+            </p>
+            <p>
+              <strong>Encrypted message:</strong> VTSEGDT
+            </p>
+          </div>
+        </section>
+
+        <section className="bg-white p-6 mt-8 shadow-md rounded-lg text-center flex justify-center flex-col items-center">
+          <p className="text-2xl font-semibold mb-4">Try It Yourself</p>
+          <div className="space-y-6 w-2/3">
+            <label
+              htmlFor="text"
+              className="block font-medium text-gray-600 mb-2"
+            >
+              Enter Text:
+            </label>
+            <input
+              type="text"
+              id="text"
+              value={text}
+              onChange={(e) => setText(e.target.value)}
+              className="w-full p-2 border border-gray-300 rounded-md"
+            />
+
             <div>
               <label
                 htmlFor="key"
@@ -143,29 +139,30 @@ const MonoalphabeticCipher: React.FC = () => {
                 className="w-full p-2 border border-gray-300 rounded-md"
               />
             </div>
-          </div>
 
-          <div className="flex gap-4 mt-4">
-            <button
-              onClick={handleEncrypt}
-              className="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600"
-            >
-              Encrypt
-            </button>
-            <button
-              onClick={handleDecrypt}
-              className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
-            >
-              Decrypt
-            </button>
-          </div>
-
-          {output && (
-            <div className="mt-6 p-4 bg-gray-200 rounded-md">
-              <p className="font-medium text-gray-700">{output}</p>
+            <div className="flex gap-4 mt-4 justify-center">
+              <button
+                onClick={handleEncrypt}
+                className="w-full bg-green-600 text-white p-3 rounded-md font-semibold hover:bg-green-700"
+              >
+                Encrypt
+              </button>
+              <button
+                onClick={handleDecrypt}
+                className="w-full bg-gray-800 text-white p-3 rounded-md font-semibold hover:bg-gray-900"
+              >
+                Decrypt
+              </button>
             </div>
-          )}
-        </div>
+
+            {output && (
+              <div className="mt-6 p-4 bg-gray-200 rounded-md">
+                <p className="text-lg font-semibold">Result</p>
+                <p className="font-medium text-gray-700">{output}</p>
+              </div>
+            )}
+          </div>
+        </section>
       </main>
     </div>
   );
