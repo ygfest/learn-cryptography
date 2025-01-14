@@ -4,6 +4,7 @@ import "../globals.css";
 import NavigationBar from "../components/nav-bar";
 //import { Poppins } from "next/font/google";
 import Footer from "../components/footer";
+import { Provider } from "@/components/ui/provider";
 
 export const metadata: Metadata = {
   title: "Learn Cryptography",
@@ -16,11 +17,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body>
-        <NavigationBar />
-        {children}
-        <Footer />
+        <Provider>
+          <NavigationBar />
+          {children}
+          <Footer />
+        </Provider>
       </body>
     </html>
   );

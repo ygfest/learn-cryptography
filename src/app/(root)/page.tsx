@@ -1,22 +1,20 @@
-
 import { FiUser } from "react-icons/fi";
 import { SiVite } from "react-icons/si";
 import { FiHelpCircle } from "react-icons/fi";
 import { MdNavigateNext } from "react-icons/md";
-import Link from "next/link"
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
-  
   return (
     <main className="bg-white font-poppins">
       {/* Hero Section */}
       <section className="relative flex h-[80vh] w-full items-center justify-center min-w-[400px]">
-        
         <div className="z-30 w-[90%] max-w-[1200px] pt-4">
           <h1 className="text-center text-[2.3rem] font-bold leading-tight md:text-[3.2rem] md:leading-none lg:text-[4rem] 2xl:text-[4.5rem]">
-            <span className="text-black">
-              Learn Cryptography
-            </span>
+            <span className="text-black">Learn Cryptography</span>
+
+            <Button />
             <br />
             <span className="bg-gradient-to-b from-[#32CD32] to-[#2E8B57] bg-clip-text text-transparent">
               in an easy and simple way
@@ -32,15 +30,11 @@ export default function Home() {
         </div>
       </section>*/}
 
-
       {/* Help Button */}
-      <button
-        className="fixed bottom-4 right-4 bg-gray-100 bg-opacity-50 backdrop-blur-md rounded-full p-3 shadow-lg hover:bg-gray-200 transition-all"
-      >
+      <button className="fixed bottom-4 right-4 bg-gray-100 bg-opacity-50 backdrop-blur-md rounded-full p-3 shadow-lg hover:bg-gray-200 transition-all">
         <FiHelpCircle className="text-secondary text-2xl" />
       </button>
 
-      
       {/* Other Sections */}
       <section className="h-[500px] min-w-[400px]"></section>
 
@@ -85,8 +79,6 @@ export default function Home() {
             </div>
           </div>
 
-          
-
           {/* Built By and Powered By Section */}
           <div className="text-sm md:text-base flex flex-col items-start gap-4">
             <p className="font-normal">
@@ -107,5 +99,5 @@ export default function Home() {
         </div>
       </footer>
     </main>
-  )
+  );
 }

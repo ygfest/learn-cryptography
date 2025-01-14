@@ -115,7 +115,7 @@ const AffineCipher: React.FC = () => {
           />
         </section>
 
-        <section className="mt-10 bg-white p-6 rounded-lg shadow-md text-center flex justify-center flex-col items-center">
+        <section className="mt-8 bg-white p-6 rounded-lg shadow-md text-center flex justify-center flex-col items-center">
           <p className="text-2xl font-semibold mb-4">Try It Yourself</p>
           <div className="space-y-6 w-2/3">
             <div className="flex flex-col justify-center items-center">
