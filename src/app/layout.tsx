@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "../globals.css";
-import NavigationBar from "../components/nav-bar";
+import "./globals.css";
+import NavigationBar from "./components/nav-bar";
 //import { Poppins } from "next/font/google";
-import Footer from "../components/footer";
+import Footer from "./components/footer";
 import { Provider } from "@/components/ui/provider";
 
 export const metadata: Metadata = {

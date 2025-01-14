@@ -1,5 +1,8 @@
 import Link from "next/link";
 import { auth, signIn, signOut } from "../auth";
+import { Avatar } from "@/components/ui/avatar";
+import { toaster, Toaster } from "@/components/ui/toaster";
+import ClientToaster from "./session-toaster";
 
 async function NavigationBar() {
   const session = await auth();
@@ -16,6 +19,10 @@ async function NavigationBar() {
     await signOut();
   }
 
+  const toastMessage = session
+    ? { title: "Welcome!", description: `Hello, ${session?.user?.name}` }
+    : undefined;
+
   return (
     <nav className="fixed top-0 z-40 w-full border-b-2 border-[#300651] px-4 py-3 backdrop-blur-sm backdrop-saturate-150 bg-white md:px-8 md:py-4">
       <header className="flex w-full items-center justify-between">
@@ -23,6 +30,7 @@ async function NavigationBar() {
         <div className="flex gap-1 md:gap-4 items-center">
           {session && session.user ? (
             <>
+              <ClientToaster toastMessage={toastMessage} />
               <Link
                 href="/startup"
                 className="font-medium min-w-[60px] text-sm md:min-w-[100px] md:text-base p-2 rounded-3xl text-primary hover:bg-zinc-200 flex-nowrap"
@@ -30,6 +38,10 @@ async function NavigationBar() {
                 Get Started
               </Link>
               <Link href={`/user/${session?.id}`}>{session?.user?.name}</Link>
+              <Avatar
+                src="https://bit.ly/sage-adebayo"
+                name={session?.user?.name}
+              />
               <form action={handleSignOut} method="post">
                 <button
                   type="submit"
