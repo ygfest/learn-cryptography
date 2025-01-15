@@ -41,13 +41,9 @@ async function NavigationBar() {
         backdropFilter="blur(10px) saturate(150%)"
       >
         <Flex align="center" justify="space-between" w="full">
-          <Image
-            src="/Cryptograppy.svg"
-            alt="logo"
-            w="120px"
-            h="35px"
-            href="/"
-          />
+          <Link href="/">
+            <Image src="/Cryptograppy.svg" alt="logo" w="120px" h="35px" />
+          </Link>
 
           <Flex align="center" gap={{ base: 1, md: 4 }}>
             {session && session.user ? (

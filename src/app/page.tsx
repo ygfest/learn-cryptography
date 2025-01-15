@@ -15,7 +15,7 @@ import {
 } from "@chakra-ui/react";
 export default function Home() {
   return (
-    <Container maxW={"5xl"} marginTop={24}>
+    <Container maxW={"5xl"}>
       <Stack
         textAlign={"center"}
         align={"center"}
@@ -28,7 +28,7 @@ export default function Home() {
           lineHeight={"110%"}
           color={"gray.700"}
         >
-          Learning Crytography <br />
+          Learning Cryptography <br />
           <Text as={"span"} color={"#04AA6D"} fontWeight={"bold"}>
             made easy
           </Text>
