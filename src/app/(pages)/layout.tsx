@@ -15,11 +15,7 @@ export default function Layout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <div>
-      <NavigationBar />
-      <div className="mt-[72px]">
-        <Tabs />
-      </div>
-      <main className="flex-1 mx-auto max-w-4xl px-4 py-6">{children}</main>
+      <main className="flex-1 mx-auto max-w-4xl">{children}</main>
     </div>
   );
 }

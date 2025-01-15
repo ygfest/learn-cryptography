@@ -1,11 +1,15 @@
+import { Box, Button, Flex, Link as ChakraLink, Image } from "@chakra-ui/react";
 import Link from "next/link";
 import { auth, signIn, signOut } from "../auth";
 import { Avatar } from "@/components/ui/avatar";
-import { toaster, Toaster } from "@/components/ui/toaster";
-import ClientToaster from "./session-toaster";
+import { Toaster, toaster } from "@/components/ui/toaster";
+toaster;
+import { useEffect } from "react";
 
 async function NavigationBar() {
   const session = await auth();
+
+  // Trigger toast on successful login
 
   // Server action for handling sign-in
   async function handleSignIn() {
@@ -19,51 +23,113 @@ async function NavigationBar() {
     await signOut();
   }
 
-  const toastMessage = session
-    ? { title: "Welcome!", description: `Hello, ${session?.user?.name}` }
-    : undefined;
-
   return (
-    <nav className="fixed top-0 z-40 w-full border-b-2 border-[#300651] px-4 py-3 backdrop-blur-sm backdrop-saturate-150 bg-white md:px-8 md:py-4">
-      <header className="flex w-full items-center justify-between">
-        <img src="/st-logo.png" alt="logo" width={120} height={35} />
-        <div className="flex gap-1 md:gap-4 items-center">
-          {session && session.user ? (
-            <>
-              <ClientToaster toastMessage={toastMessage} />
-              <Link
-                href="/startup"
-                className="font-medium min-w-[60px] text-sm md:min-w-[100px] md:text-base p-2 rounded-3xl text-primary hover:bg-zinc-200 flex-nowrap"
-              >
-                Get Started
-              </Link>
-              <Link href={`/user/${session?.id}`}>{session?.user?.name}</Link>
-              <Avatar
-                src="https://bit.ly/sage-adebayo"
-                name={session?.user?.name}
-              />
-              <form action={handleSignOut} method="post">
-                <button
-                  type="submit"
-                  className="font-medium min-w-[60px] text-sm md:min-w-[100px] md:text-base p-2  bg-secondary rounded-3xl text-white hover:bg-slate-200 hover:text-secondary flex-nowrap"
+    <>
+      <Toaster />
+
+      <Box
+        as="nav"
+        position="fixed"
+        top={0}
+        zIndex={40}
+        w="100%"
+        borderBottom="1px solid"
+        borderColor="gray.200"
+        bg="white"
+        px={{ base: 4, md: 8 }}
+        py={{ base: 3, md: 4 }}
+        backdropFilter="blur(10px) saturate(150%)"
+      >
+        <Flex align="center" justify="space-between" w="full">
+          <Image
+            src="/Cryptograppy.svg"
+            alt="logo"
+            w="120px"
+            h="35px"
+            href="/"
+          />
+
+          <Flex align="center" gap={{ base: 1, md: 4 }}>
+            {session && session.user ? (
+              <>
+                <ChakraLink
+                  as={Link}
+                  href="/startup"
+                  fontWeight="medium"
+                  fontSize={{ base: "sm", md: "md" }}
+                  px={4}
+                  py={2}
+                  borderRadius="3xl"
+                  bg="gray.100"
+                  _hover={{ bg: "gray.200" }}
                 >
-                  Log out
-                </button>
-              </form>
-            </>
-          ) : (
-            <form action={handleSignIn} method="post">
-              <button
-                type="submit"
-                className="hidden md:inline p-2 text-sm md:text-base font-medium text-white bg-primary hover:bg-zinc-600 rounded-3xl min-w-[150px] md:min-w-[120px] flex-nowrap"
-              >
-                Log in
-              </button>
-            </form>
-          )}
-        </div>
-      </header>
-    </nav>
+                  Get Started
+                </ChakraLink>
+
+                <ChakraLink
+                  as={Link}
+                  href={`/user/${session?.id}`}
+                  fontWeight="medium"
+                >
+                  {session.user.name}
+                </ChakraLink>
+
+                <Avatar
+                  src="https://bit.ly/sage-adebayo"
+                  name={session?.user?.name}
+                />
+
+                <form action={handleSignOut} method="post">
+                  <Button
+                    type="submit"
+                    fontWeight="medium"
+                    fontSize={{ base: "sm", md: "md" }}
+                    px={4}
+                    py={2}
+                    bg="#04AA6D"
+                    color="white"
+                    borderRadius="3xl"
+                    _hover={{ bg: "gray.600", color: "secondary" }}
+                  >
+                    Log out
+                  </Button>
+                </form>
+              </>
+            ) : (
+              <>
+                <ChakraLink
+                  as={Link}
+                  href="/introduction"
+                  fontWeight="medium"
+                  fontSize={{ base: "sm", md: "md" }}
+                  px={4}
+                  py={2}
+                  borderRadius="3xl"
+                  _hover={{ color: "gray.700" }}
+                >
+                  Get Started
+                </ChakraLink>
+                <form action={handleSignIn} method="post">
+                  <Button
+                    type="submit"
+                    fontWeight="medium"
+                    fontSize={{ base: "sm", md: "md" }}
+                    px={6}
+                    py={2}
+                    bg="#04AA6D"
+                    color="white"
+                    borderRadius="3xl"
+                    _hover={{ bg: "gray.600" }}
+                  >
+                    Log in
+                  </Button>
+                </form>
+              </>
+            )}
+          </Flex>
+        </Flex>
+      </Box>
+    </>
   );
 }
 

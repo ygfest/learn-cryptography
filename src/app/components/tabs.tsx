@@ -1,10 +1,27 @@
+"use client";
+
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
+import { CiMenuFries } from "react-icons/ci";
 
 const Tabs = () => {
+  const [isTabsOpen, setIsTabsOpen] = useState(false);
+
+  const toggleTabLinks = () => {
+    setIsTabsOpen((prevState) => !prevState);
+  };
+
   return (
-    <div className="fixed z-50 w-full p-0 m-0 bg-secondary text-white">
-      <ul className="flex flex-row justify-between px-2 py-2">
+    <div className="fixed left-0 z-50 w-full  mt-16 m-0 bg-secondary text-white items-center">
+      <div className="flex items-center justify-between p-4 md:hidden ">
+        <button onClick={toggleTabLinks} aria-label="Toggle menu">
+          <CiMenuFries />
+        </button>
+      </div>
+
+      <ul
+        className={`${isTabsOpen ? "block" : "hidden"} md:flex flex-col md:flex-row justify-between px-2 py-2`}
+      >
         <Link href="introduction">
           <li className="hover:bg-primary">Introduction</li>
         </Link>

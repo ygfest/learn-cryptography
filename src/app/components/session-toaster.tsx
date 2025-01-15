@@ -1,23 +1,25 @@
+// components/ui/ToastTrigger.tsx (Client Component)
 "use client";
 
-import { Toaster, toaster } from "@/components/ui/toaster";
 import { useEffect } from "react";
+import { toaster } from "@/components/ui/toaster";
 
-function ClientToaster({
-  toastMessage,
-}: {
-  toastMessage?: { title: string; description: string };
-}) {
-  useEffect(() => {
-    if (toastMessage) {
-      toaster.create({
-        title: toastMessage.title,
-        description: toastMessage.description,
-      });
-    }
-  }, [toastMessage]);
-
-  return <Toaster />;
+interface ToastTriggerProps {
+  sessionUser: string | null;
 }
 
-export default ClientToaster;
+const ToastTrigger = ({ sessionUser }: ToastTriggerProps) => {
+  useEffect(() => {
+    if (sessionUser) {
+      toaster.create({
+        title: "Welcome!",
+        description: `Hello, ${sessionUser}`,
+        duration: 5000,
+      });
+    }
+  }, [sessionUser]);
+
+  return null; // This component doesn't render anything, just triggers the toast
+};
+
+export default ToastTrigger;
