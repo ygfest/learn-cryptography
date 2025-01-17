@@ -12,7 +12,7 @@ import {
 import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 import { ReactNode } from "react";
 
-const Logo = (props: any) => {
+const Logo = () => {
   return <Image src="/Cryptograppy.svg" h="45px" />;
 };
 

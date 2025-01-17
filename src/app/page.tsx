@@ -1,8 +1,3 @@
-import { FiUser } from "react-icons/fi";
-import { SiVite } from "react-icons/si";
-import { FiHelpCircle } from "react-icons/fi";
-import { MdNavigateNext } from "react-icons/md";
-import Link from "next/link";
 import {
   Button,
   Stack,

@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
 
 const AffineCipher: React.FC = () => {
   const [textToEncrypt, setTextToEncrypt] = useState<string>("");

@@ -20,7 +20,8 @@ const PlayfairCipher: React.FC = () => {
         setResult(decryptPlayfair(text, key));
       }
     } catch (error) {
-      alert("An error occurred during the process.");
+      alert("An error occurred during the process");
+      console.log(error);
     }
   };
 

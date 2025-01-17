@@ -4,7 +4,6 @@ import { auth, signIn, signOut } from "../auth";
 import { Avatar } from "@/components/ui/avatar";
 import { Toaster, toaster } from "@/components/ui/toaster";
 toaster;
-import { useEffect } from "react";
 
 async function NavigationBar() {
   const session = await auth();

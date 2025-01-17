@@ -3,7 +3,7 @@ import "./globals.css";
 import NavigationBar from "./components/nav-bar";
 import Footer from "./components/footer";
 import { Provider } from "@/components/ui/provider";
-import { Flex, Box, Stack } from "@chakra-ui/react";
+import { Flex, Box } from "@chakra-ui/react";
 import Tabs from "./components/tabs";
 
 export const metadata: Metadata = {
