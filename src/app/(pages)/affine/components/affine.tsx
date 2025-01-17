@@ -125,7 +125,7 @@ const AffineCipher: React.FC = () => {
               <input
                 type="text"
                 id="textToEncrypt"
-                className="w-full p-3 border rounded-md "
+                className="w-full p-3 border rounded-md bg-white "
                 value={textToEncrypt}
                 onChange={(e) => setTextToEncrypt(e.target.value)}
               />
@@ -151,7 +151,7 @@ const AffineCipher: React.FC = () => {
               <input
                 type="text"
                 id="textToDecrypt"
-                className="w-full p-3 border rounded-md"
+                className="w-full p-3 border rounded-md bg-white"
                 value={textToDecrypt}
                 onChange={(e) => setTextToDecrypt(e.target.value)}
               />

@@ -406,7 +406,7 @@ const CaesarCipher = () => {
               <input
                 type="text"
                 id="encryptPlainText"
-                className="w-full p-3 border rounded-md"
+                className="w-full p-3 border rounded-md bg-white"
                 value={encryptPlainText}
                 onChange={(e) => setEncryptPlainText(e.target.value)}
               />
@@ -421,7 +421,7 @@ const CaesarCipher = () => {
               <input
                 type="number"
                 id="encryptCaesarShift"
-                className="w-full p-3 border rounded-md"
+                className="w-full p-3 border rounded-md bg-white"
                 value={encryptCaesarShift}
                 onChange={(e) =>
                   setEncryptCaesarShift(parseInt(e.target.value))
@@ -452,7 +452,7 @@ const CaesarCipher = () => {
               <input
                 type="text"
                 id="decryptEncryptedText"
-                className="w-full p-3 border rounded-md"
+                className="w-full p-3 border rounded-md bg-white"
                 value={decryptEncryptedText}
                 onChange={(e) => setDecryptEncryptedText(e.target.value)}
               />
@@ -467,7 +467,7 @@ const CaesarCipher = () => {
               <input
                 type="number"
                 id="decryptCaesarShift"
-                className="w-full p-3 border rounded-md"
+                className="w-full p-3 border rounded-md bg-white"
                 value={decryptCaesarShift}
                 onChange={(e) =>
                   setDecryptCaesarShift(parseInt(e.target.value))

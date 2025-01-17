@@ -121,7 +121,7 @@ const MonoalphabeticCipher: React.FC = () => {
               id="text"
               value={text}
               onChange={(e) => setText(e.target.value)}
-              className="w-full p-2 border border-gray-300 rounded-md"
+              className="w-full bg-white p-2 border border-gray-300 rounded-md"
             />
 
             <div>
@@ -136,7 +136,7 @@ const MonoalphabeticCipher: React.FC = () => {
                 id="key"
                 value={key}
                 onChange={(e) => setKey(e.target.value.toUpperCase())}
-                className="w-full p-2 border border-gray-300 rounded-md"
+                className="w-full p-2 bg-white border border-gray-300 rounded-md"
               />
             </div>
 

@@ -57,7 +57,7 @@ const AutokeyCipher: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50 text-gray-800 p-6">
       <header className="bg-white shadow-md p-4 mb-6">
-        <h1 className="text-3xl font-bold text-center">Affine Cipher</h1>
+        <h1 className="text-3xl font-bold text-center">Autokey Cipher</h1>
       </header>
 
       <main className="max-w-4xl mx-auto">
@@ -121,7 +121,7 @@ const AutokeyCipher: React.FC = () => {
             type="text"
             value={text}
             onChange={(e) => setText(e.target.value)}
-            className="w-full p-3 border rounded-md"
+            className="w-full p-3 border rounded-md bg-white"
           />
           <label htmlFor="key" className="block font-medium mb-2">
             Enter Key:
@@ -131,7 +131,7 @@ const AutokeyCipher: React.FC = () => {
             type="text"
             value={key}
             onChange={(e) => setKey(e.target.value)}
-            className="w-full p-3 border rounded-md"
+            className="w-full p-3 border rounded-md bg-white"
           />
 
           <div className="flex space-x-4">

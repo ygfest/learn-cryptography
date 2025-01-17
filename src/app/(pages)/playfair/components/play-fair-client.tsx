@@ -242,21 +242,21 @@ const PlayfairCipher: React.FC = () => {
               placeholder="Enter Key"
               value={key}
               onChange={(e) => setKey(e.target.value)}
-              className="w-full p-3 border rounded-md"
+              className="w-full p-3 border rounded-md bg-white"
             />
             <input
               type="text"
               placeholder="Enter Text"
               value={text}
               onChange={(e) => setText(e.target.value)}
-              className="w-full p-3 border rounded-md"
+              className="w-full p-3 border rounded-md bg-white"
             />
             <select
               value={operation}
               onChange={(e) =>
                 setOperation(e.target.value as "encrypt" | "decrypt")
               }
-              className="w-full p-3 border rounded-md"
+              className="w-full p-3 border rounded-md bg-white"
             >
               <option value="encrypt">Encrypt</option>
               <option value="decrypt">Decrypt</option>
