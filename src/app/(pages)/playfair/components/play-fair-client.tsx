@@ -120,13 +120,11 @@ const PlayfairCipher: React.FC = () => {
             <br />
             <br />
             The ‘key’ for the Affine cipher consists of 2 numbers, we’ll call
-            them `a` and `b`. The following discussion assumes the use of a
-            26-character alphabet (m = 26). `a` should be chosen to be
-            relatively prime to `m` (i.e., `a` should have no factors in common
-            with `m`). It was used for tactical purposes by British forces in
-            the Second Boer War and in World War I and for the same purpose by
-            the Australians during World War II. This was because Playfair is
-            reasonably fast to use and requires no special equipment.
+            them <code>a</code> and <code>b</code>. The following discussion
+            assumes the use of a 26-character alphabet (<code>m = 26</code>).{" "}
+            <code>a</code> should be chosen to be relatively prime to{" "}
+            <code>m</code> (i.e., <code>a</code> should have no factors in
+            common with <code>m</code>).
             <br />
           </p>
 
@@ -163,9 +161,10 @@ const PlayfairCipher: React.FC = () => {
                 For example:
               </span>
               <br />
-              <span className="font-semibold">
-                PlainText: "instruments" <br />
-                After Split: 'in' 'st' 'ru' 'me' 'nt' 'sz'
+              <span>
+                PlainText: &quot;instruments&quot; <br />
+                After Split: &#39;in&#39; &#39;st&#39; &#39;ru&#39; &#39;me&#39;
+                &#39;nt&#39; &#39;sz&#39;
               </span>
             </div>
           </div>

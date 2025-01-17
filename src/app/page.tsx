@@ -1,7 +1,6 @@
 import {
   Button,
   Stack,
-  For,
   Container,
   Heading,
   Text,
@@ -31,9 +30,8 @@ export default function Home() {
         <Text color={"gray.500"} maxW={"3xl"}>
           Dive into the world of cryptography with simple, interactive lessons
           and hands-on techniques. Master encryption, decryption, and security
-          concepts in a fun and engaging way—whether you're a beginner or
-          looking to refine your skills. Start your journey to becoming a
-          cryptography pro today!
+          concepts in a fun and engaging way—whether you&apos;re a beginner or
+          looking to refine your skills.
         </Text>
         <Stack spaceX={6} direction={"row"}>
           <ChakraLink

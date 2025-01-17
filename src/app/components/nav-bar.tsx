@@ -3,7 +3,6 @@ import Link from "next/link";
 import { auth, signIn, signOut } from "../auth";
 import { Avatar } from "@/components/ui/avatar";
 import { Toaster, toaster } from "@/components/ui/toaster";
-toaster;
 
 async function NavigationBar() {
   const session = await auth();

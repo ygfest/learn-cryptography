@@ -9,24 +9,29 @@ const AffineCipher: React.FC = () => {
   const [decryptedText, setDecryptedText] = useState<string>("");
 
   const modInverse = (a: number, m: number): number | null => {
-    let m0 = m,
-      t,
-      q;
-    let x0 = 0,
-      x1 = 1;
+    const m0 = m;
 
-    if (m === 1) return null;
+    if (m === 1) return null; // Modular inverse does not exist for m = 1
 
-    while (a > 1) {
-      q = Math.floor(a / m);
-      t = m;
-      m = a % m;
-      a = t;
-      t = x0;
-      x0 = x1 - q * x0;
-      x1 = t;
-    }
+    const extendedEuclid = (a: number, m: number): [number, number] => {
+      let x0 = 0,
+        x1 = 1;
 
+      while (a > 1) {
+        const q = Math.floor(a / m);
+        [a, m] = [m, a % m]; // Update a and m
+        [x0, x1] = [x1 - q * x0, x0]; // Update x0 and x1
+      }
+
+      return [a, x1];
+    };
+
+    const [gcd, x1] = extendedEuclid(a, m0);
+
+    // If gcd is not 1, modular inverse does not exist
+    if (gcd !== 1) return null;
+
+    // Ensure x1 is positive
     return x1 < 0 ? x1 + m0 : x1;
   };
 
