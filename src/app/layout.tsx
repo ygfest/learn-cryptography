@@ -5,6 +5,7 @@ import Footer from "./components/footer";
 import { Provider } from "@/components/ui/provider";
 import { Flex, Box } from "@chakra-ui/react";
 import Tabs from "./components/tabs";
+import StoreProvider from "./StoreProvider";
 
 export const metadata: Metadata = {
   title: "Learn Cryptography",
@@ -19,28 +20,30 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <Provider>
-          <Flex
-            direction="column"
-            minH="100vh" // Makes the container take the full height of the viewport
-          >
-            {/* Navigation Bar at the Top */}
-            <Box as="header">
-              <NavigationBar />
-              <Tabs />
-            </Box>
+        <StoreProvider>
+          <Provider>
+            <Flex
+              direction="column"
+              minH="100vh" // Makes the container take the full height of the viewport
+            >
+              {/* Navigation Bar at the Top */}
+              <Box as="header">
+                <NavigationBar />
+                <Tabs />
+              </Box>
 
-            {/* Main Content (Stretchable Area) */}
-            <Box as="main" flex="1" px={4} py={6} marginTop={20}>
-              {children}
-            </Box>
+              {/* Main Content (Stretchable Area) */}
+              <Box as="main" flex="1" px={4} py={6} marginTop={20}>
+                {children}
+              </Box>
 
-            {/* Footer at the Bottom */}
-            <Box as="footer">
-              <Footer />
-            </Box>
-          </Flex>
-        </Provider>
+              {/* Footer at the Bottom */}
+              <Box as="footer">
+                <Footer />
+              </Box>
+            </Flex>
+          </Provider>
+        </StoreProvider>
       </body>
     </html>
   );

@@ -119,12 +119,12 @@ const PlayfairCipher: React.FC = () => {
             pair of alphabets (digraphs) instead of a single alphabet.
             <br />
             <br />
-            The ‘key’ for the Affine cipher consists of 2 numbers, we’ll call
-            them <code>a</code> and <code>b</code>. The following discussion
-            assumes the use of a 26-character alphabet (<code>m = 26</code>).{" "}
-            <code>a</code> should be chosen to be relatively prime to{" "}
-            <code>m</code> (i.e., <code>a</code> should have no factors in
-            common with <code>m</code>).
+            The ‘key’ for the Affine cipher consists of 2 numbers, we&aposll
+            call them <code>a</code> and <code>b</code>. The following
+            discussion assumes the use of a 26-character alphabet (
+            <code>m = 26</code>). <code>a</code> should be chosen to be
+            relatively prime to <code>m</code> (i.e., <code>a</code> should have
+            no factors in common with <code>m</code>).
             <br />
           </p>
 

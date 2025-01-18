@@ -2,7 +2,7 @@ import { Box, Button, Flex, Link as ChakraLink, Image } from "@chakra-ui/react";
 import Link from "next/link";
 import { auth, signIn, signOut } from "../auth";
 import { Avatar } from "@/components/ui/avatar";
-import { Toaster, toaster } from "@/components/ui/toaster";
+import { Toaster } from "@/components/ui/toaster";
 
 async function NavigationBar() {
   const session = await auth();
