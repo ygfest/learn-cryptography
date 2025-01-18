@@ -44,7 +44,7 @@ export default function Home() {
           >
             Get started
           </ChakraLink>
-          <Button rounded={"full"} px={6}>
+          <Button bg={"none"} rounded={"full"}>
             Learn more
           </Button>
         </Stack>

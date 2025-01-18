@@ -6,6 +6,7 @@ import { Provider } from "@/components/ui/provider";
 import { Flex, Box } from "@chakra-ui/react";
 import Tabs from "./components/tabs";
 import StoreProvider from "./StoreProvider";
+import HolyLoader from "holy-loader";
 
 export const metadata: Metadata = {
   title: "Learn Cryptography",
@@ -20,6 +21,14 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
+        <HolyLoader
+          height={4}
+          color="#04AA6D"
+          speed={200}
+          showSpinner={false}
+          easing="linear"
+          boxShadow="2px"
+        />
         <StoreProvider>
           <Provider>
             <Flex
