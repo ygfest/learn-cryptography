@@ -1,8 +1,16 @@
-import { Box, Button, Flex, Link as ChakraLink, Image } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  Link as ChakraLink,
+  Image,
+  Text,
+} from "@chakra-ui/react";
 import Link from "next/link";
 import { auth, signIn, signOut } from "../auth";
 import { Avatar } from "@/components/ui/avatar";
 import { Toaster } from "@/components/ui/toaster";
+import Tabs from "./tabs";
 
 async function NavigationBar() {
   const session = await auth();
@@ -54,8 +62,9 @@ async function NavigationBar() {
                   px={4}
                   py={2}
                   borderRadius="3xl"
-                  bg="gray.100"
-                  _hover={{ bg: "gray.200" }}
+                  color={"#04AA6D"}
+                  bg="none"
+                  _hover={{ color: "black" }}
                 >
                   Get Started
                 </ChakraLink>
@@ -63,15 +72,14 @@ async function NavigationBar() {
                 <ChakraLink
                   as={Link}
                   href={`/user/${session?.id}`}
-                  fontWeight="medium"
+                  fontStyle={"bold"}
+                  color={"black"}
+                  _hover={{ color: "#04AA6D" }}
                 >
-                  {session.user.name}
+                  <Text fontStyle={"bold"}>{session.user.name}</Text>
                 </ChakraLink>
 
-                <Avatar
-                  src="https://bit.ly/sage-adebayo"
-                  name={session?.user?.name}
-                />
+                <Avatar src={session?.user?.image} name={session?.user?.name} />
 
                 <form action={handleSignOut} method="post">
                   <Button
@@ -123,6 +131,7 @@ async function NavigationBar() {
           </Flex>
         </Flex>
       </Box>
+      {<Tabs />}
     </>
   );
 }

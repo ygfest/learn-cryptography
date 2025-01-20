@@ -1,16 +1,21 @@
 "use client";
 
+import { useSession } from "next-auth/react";
 import Link from "next/link";
 import React, { useState } from "react";
 import { CiMenuFries } from "react-icons/ci";
 
 const Tabs = () => {
   const [isTabsOpen, setIsTabsOpen] = useState(false);
+  const session = useSession();
 
   const toggleTabLinks = () => {
     setIsTabsOpen((prevState) => !prevState);
   };
 
+  if (session.status !== "authenticated") {
+    return null;
+  }
   return (
     <div className="fixed left-0 z-50 w-full  mt-16 m-0 bg-secondary text-white items-center">
       <div className="flex items-center justify-between p-4 md:hidden ">

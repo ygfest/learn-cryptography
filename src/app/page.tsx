@@ -44,7 +44,13 @@ export default function Home() {
           >
             Get started
           </ChakraLink>
-          <Button bg={"none"} rounded={"full"}>
+          <Button
+            bg={"none"}
+            rounded={"full"}
+            border={2}
+            borderColor={"#04AA6D"}
+            color={"#04AA6D"}
+          >
             Learn more
           </Button>
         </Stack>
