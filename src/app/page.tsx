@@ -8,8 +8,7 @@ import {
   Link as ChakraLink,
 } from "@chakra-ui/react";
 
-
-
+export default function Page() {
   return (
     <Container maxW={"5xl"}>
       <Stack

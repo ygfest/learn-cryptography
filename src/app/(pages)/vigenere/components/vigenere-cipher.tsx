@@ -104,6 +104,32 @@ const VigenereCipher: React.FC = () => {
             the ciphertext.
           </p>
 
+          <p className="text-center font-semibold mb-2">Encryption</p>
+          <p className="text-gray-700 mb-4">
+            The first letter of the plaintext, G is paired with A, the first
+            letter of the key. So use row G and column A of the Vigenère square,
+            namely G. Similarly, for the second letter of the plaintext, the
+            second letter of the key is used, the letter at row E, and column Y
+            is C. The rest of the plaintext is enciphered in a similar fashion.
+            As an example we shall encrypt the plaintext "leon battista
+            alberti". To keep with the convention of writing ciphertext in
+            uppercase, we shall invert Alberti's own rule, and use lowercase
+            letters to signify the change.
+          </p>
+
+          <p className="text-center font-semibold mb-2">Decryption</p>
+          <p className="text-gray-700 mb-4">
+            Decryption is performed by going to the row in the table
+            corresponding to the key, finding the position of the ciphertext
+            letter in this row, and then using the column’s label as the
+            plaintext. For example, in row A (from AYUSH), the ciphertext G
+            appears in column G, which is the first plaintext letter. Next, we
+            go to row Y (from AYUSH), locate the ciphertext C which is found in
+            column E, thus E is the second plaintext letter. A more easy
+            implementation could be to visualize Vigenère algebraically by
+            converting [A-Z] into numbers [0–25].
+          </p>
+
           <div className="bg-gray-100 p-4 rounded-md mb-6">
             <strong>Encryption Formula:</strong> E(x) = (P + K) mod 26 <br />
             <strong>Decryption Formula:</strong> D(x) = (E - K + 26) mod 26
@@ -122,7 +148,7 @@ const VigenereCipher: React.FC = () => {
               <input
                 type="text"
                 id="plaintext"
-                className="w-full p-3 border rounded-md"
+                className="w-full p-3 border rounded-md bg-inherit"
                 value={plaintext}
                 onChange={(e) => setPlaintext(e.target.value)}
               />
@@ -134,7 +160,7 @@ const VigenereCipher: React.FC = () => {
               <input
                 type="text"
                 id="key"
-                className="w-full p-3 border rounded-md"
+                className="w-full p-3 border rounded-md bg-inherit"
                 value={key}
                 onChange={(e) => setKey(e.target.value)}
               />
