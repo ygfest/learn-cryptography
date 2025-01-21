@@ -7,7 +7,9 @@ import {
   Flex,
   Link as ChakraLink,
 } from "@chakra-ui/react";
-export default function Home() {
+
+
+
   return (
     <Container maxW={"5xl"}>
       <Stack

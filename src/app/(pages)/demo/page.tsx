@@ -13,20 +13,7 @@ interface TodoProps {
 export default function NotFoundPage() {
   const BASE_URL = "https://jsonplaceholder.typicode.com/todos";
 
-  const {
-    data: etoYungData,
-    isError,
-    isPending,
-  } = useQuery<TodoProps[]>({
-    queryKey: ["id"],
-    queryFn: async () => {
-      const response = await fetch(BASE_URL);
-      if (!response.ok) {
-        throw new Error("Data is not fetched");
-      }
-      return response.json();
-    },
-  });
+  
   return (
     <Container centerContent py={16}>
       <Stack direction={"column"} spaceX={6} alignItems={"center"}>
