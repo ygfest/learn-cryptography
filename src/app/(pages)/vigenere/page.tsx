@@ -1,6 +1,7 @@
+import React from "react";
 import VigenereCipher from "./components/vigenere-cipher";
 
-function page() {
+function VigenerePage() {
   return (
     <div>
       <VigenereCipher />
@@ -8,4 +9,4 @@ function page() {
   );
 }
 
-export default page;
+export default VigenerePage;

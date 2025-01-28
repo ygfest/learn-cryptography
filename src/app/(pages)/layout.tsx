@@ -1,9 +1,10 @@
 import { Metadata } from "next";
 import "../globals.css";
+import SideBarSection from "../components/sidebar-section";
 
 export const metadata: Metadata = {
   title: "Learn Cryptography | Introduction",
-  description: "Buit by Estepano",
+  description: "Built by Estepano",
 };
 
 export default function Layout({
@@ -11,7 +12,16 @@ export default function Layout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <div>
-      <main className="flex-1 mx-auto max-w-4xl">{children}</main>
+      <main className="max-w-6xl mx-auto px-4">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          {/* Sidebar */}
+          <div className="hidden lg:block lg:col-span-3">
+            <SideBarSection />
+          </div>
+          {/* Main Content */}
+          <div className="lg:col-span-9">{children}</div>
+        </div>
+      </main>
     </div>
   );
 }
