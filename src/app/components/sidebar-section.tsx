@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { auth, signIn } from "../auth";
 import LoginButton from "./login-button";
+import LogOutButton from "./log-out-button";
 
 export async function SideBarSection() {
   const session = await auth();
@@ -25,7 +26,7 @@ export async function SideBarSection() {
       <div className="w-full divide-y divide-gray-200">
         <p className="text-center py-2">Recent Activity</p>
         <p className="text-center py-2">Account Settings</p>
-        <p className="text-center py-2">Logout</p>
+        <LogOutButton />
       </div>
     </div>
   );

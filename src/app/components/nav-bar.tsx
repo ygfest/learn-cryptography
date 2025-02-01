@@ -7,10 +7,11 @@ import {
   Text,
 } from "@chakra-ui/react";
 import Link from "next/link";
-import { auth, signIn, signOut } from "../auth";
+import { auth } from "../auth";
 import { Avatar } from "@/components/ui/avatar";
 import { Toaster } from "@/components/ui/toaster";
 import Tabs from "./tabs";
+import { userLogin, userLogout } from "../../../actions/auth.action";
 
 async function NavigationBar() {
   const session = await auth();
@@ -18,16 +19,8 @@ async function NavigationBar() {
   // Trigger toast on successful login
 
   // Server action for handling sign-in
-  async function handleSignIn() {
-    "use server";
-    await signIn("github");
-  }
 
   // Server action for handling sign-out
-  async function handleSignOut() {
-    "use server";
-    await signOut();
-  }
 
   return (
     <>
@@ -81,14 +74,14 @@ async function NavigationBar() {
 
                 <Avatar src={session?.user?.image} name={session?.user?.name} />
 
-                <form action={handleSignOut} method="post">
+                <form action={userLogout} method="post">
                   <Button
                     type="submit"
                     fontWeight="medium"
                     fontSize={{ base: "sm", md: "md" }}
                     px={4}
                     py={2}
-                    bg="#04AA6D"
+                    bg="#282A35"
                     color="white"
                     borderRadius="3xl"
                     _hover={{ bg: "gray.600", color: "secondary" }}
@@ -111,7 +104,7 @@ async function NavigationBar() {
                 >
                   Get Started
                 </ChakraLink>
-                <form action={handleSignIn} method="post">
+                <form action={userLogin} method="post">
                   <Button
                     type="submit"
                     fontWeight="medium"
