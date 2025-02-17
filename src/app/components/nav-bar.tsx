@@ -12,6 +12,7 @@ import { Avatar } from "@/components/ui/avatar";
 import { Toaster } from "@/components/ui/toaster";
 import Tabs from "./tabs";
 import { userLogin, userLogout } from "../../../actions/auth.action";
+import { ColorModeButton } from "@/components/ui/color-mode";
 
 async function NavigationBar() {
   const session = await auth();
@@ -34,7 +35,7 @@ async function NavigationBar() {
         w="100%"
         borderBottom="1px solid"
         borderColor="gray.200"
-        bg="white"
+        bg={{ base: "white", _dark: "#1D2A35" }}
         px={{ base: 4, md: 8 }}
         py={{ base: 3, md: 4 }}
         backdropFilter="blur(10px) saturate(150%)"
@@ -47,6 +48,7 @@ async function NavigationBar() {
           <Flex align="center" gap={{ base: 1, md: 4 }}>
             {session && session.user ? (
               <>
+                <ColorModeButton />
                 <ChakraLink
                   as={Link}
                   href="/startup"
@@ -55,8 +57,8 @@ async function NavigationBar() {
                   px={4}
                   py={2}
                   borderRadius="3xl"
-                  color={"#04AA6D"}
-                  bg="none"
+                  color={{ base: "#04AA6D", _dark: "white" }}
+                  bg={{ base: "white", _dark: "black" }}
                   _hover={{ color: "black" }}
                 >
                   Get Started

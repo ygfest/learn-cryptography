@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import "../globals.css";
 import SideBarSection from "../components/sidebar-section";
+import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
   title: "Learn Cryptography | Introduction",
@@ -12,6 +13,7 @@ export default function Layout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <div>
+      <Toaster />
       <main className="max-w-6xl mx-auto px-4 mt-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           {/* Sidebar */}

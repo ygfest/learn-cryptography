@@ -174,7 +174,7 @@ const VigenereCipher: React.FC = () => {
               </button>
               <button
                 onClick={handleDecrypt}
-                className="w-1/2 bg-blue-600 text-white p-3 rounded-md font-semibold hover:bg-blue-700"
+                className="w-1/2 bg-gray-800 text-white p-3 rounded-md font-semibold hover:bg-gray-900 transition"
               >
                 Decrypt
               </button>

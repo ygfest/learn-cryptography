@@ -1,28 +1,21 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { use, useState } from "react";
 
 const PlayfairCipher: React.FC = () => {
   const [key, setKey] = useState("");
   const [text, setText] = useState("");
+  const [encryptedText, setEncryptedText] = useState("");
+  const [decryptedText, setDecryptedText] = useState("");
   const [operation, setOperation] = useState<"encrypt" | "decrypt">("encrypt");
   const [result, setResult] = useState("");
 
-  const handleOperation = () => {
-    if (!key || !text) {
-      alert("Please provide both key and text.");
-      return;
-    }
-    try {
-      if (operation === "encrypt") {
-        setResult(encryptPlayfair(text, key));
-      } else {
-        setResult(decryptPlayfair(text, key));
-      }
-    } catch (error) {
-      alert("An error occurred during the process");
-      console.log(error);
-    }
+  const handleEncryptPlayfair = () => {
+    setEncryptedText(encryptPlayfair(text, key));
+  };
+
+  const handleDecryptPlayfair = () => {
+    setDecryptedText(decryptPlayfair(text, key));
   };
 
   const generateKeySquare = (key: string) => {
@@ -251,25 +244,32 @@ const PlayfairCipher: React.FC = () => {
               onChange={(e) => setText(e.target.value)}
               className="w-full p-3 border rounded-md bg-white"
             />
-            <select
-              value={operation}
-              onChange={(e) =>
-                setOperation(e.target.value as "encrypt" | "decrypt")
-              }
-              className="w-full p-3 border rounded-md bg-white"
-            >
-              <option value="encrypt">Encrypt</option>
-              <option value="decrypt">Decrypt</option>
-            </select>
-            <button
-              onClick={handleOperation}
-              className="w-full bg-green-600 text-white p-3 rounded-md font-semibold hover:bg-green-700"
-            >
-              See Result
-            </button>
-            <div className="p-4 bg-gray-100 rounded">
-              <strong>Result:</strong> {result || "No result yet."}
+
+            <div className="flex gap-4">
+              <button
+                className="w-full bg-green-600 text-white p-3 rounded-md font-semibold hover:bg-green-700"
+                onClick={handleEncryptPlayfair}
+              >
+                Encrypt
+              </button>
+              <button
+                className="w-full bg-gray-600 text-white p-3 rounded-md font-semibold hover:bg-gray-700"
+                onClick={handleDecryptPlayfair}
+              >
+                Decrypt
+              </button>
             </div>
+
+            {encryptedText && (
+              <div className="p-4 bg-gray-100 rounded">
+                <strong>Encrypted Text:</strong> {encryptedText}
+              </div>
+            )}
+            {decryptedText && (
+              <div className="p-4 bg-gray-100 rounded">
+                <strong>Decrypted Text:</strong> {decryptedText}
+              </div>
+            )}
           </div>
         </section>
       </main>
