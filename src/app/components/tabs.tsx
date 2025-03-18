@@ -22,43 +22,43 @@ const Tabs = () => {
       <ul
         className={`${
           isTabsOpen ? "block" : "hidden"
-        } md:flex flex-col md:flex-row justify-between px-2 py-2`}
+        } md:flex flex-col md:flex-row justify-between px-2 py-2 gap-2`}
       >
-        <Link href="introduction" className="flex-1">
+        <Link href="introduction" className="md:w-[9%] block">
           <li className="hover:bg-primary truncate px-2">Introduction</li>
         </Link>
-        <Link href="affine" className="flex-1">
+        <Link href="affine" className="md:w-[9%] block">
           <li className="hover:bg-primary truncate px-2">Affine Cipher</li>
         </Link>
-        <Link href="caesar" className="flex-1">
+        <Link href="caesar" className="md:w-[9%] block">
           <li className="hover:bg-primary truncate px-2">Caesar Cipher</li>
         </Link>
-        <Link href="autokey" className="flex-1">
+        <Link href="autokey" className="md:w-[9%] block">
           <li className="hover:bg-primary truncate px-2">Auto Key Cipher</li>
         </Link>
-        <Link href="mono-alphabetic" className="flex-1">
+        <Link href="mono-alphabetic" className="md:w-[9%] block">
           <li className="hover:bg-primary truncate px-2">
             Monoalphabetic Cipher
           </li>
         </Link>
-        <Link href="playfair" className="flex-1">
+        <Link href="playfair" className="md:w-[9%] block">
           <li className="hover:bg-primary truncate px-2">Playfair Cipher</li>
         </Link>
-        <Link href="homophonic" className="flex-1">
+        <Link href="homophonic" className="md:w-[9%] block">
           <li className="hover:bg-primary truncate px-2">Homophonic Cipher</li>
         </Link>
-        <Link href="vigenere" className="flex-1">
+        <Link href="vigenere" className="md:w-[9%] block">
           <li className="hover:bg-primary truncate px-2">Vigenere Cipher</li>
         </Link>
-        <Link href="polygram" className="flex-1">
+        <Link href="polygram" className="md:w-[9%] block">
           <li className="hover:bg-primary truncate px-2">
             Polygram Substitution Cipher
           </li>
         </Link>
-        <Link href="hill" className="flex-1">
+        <Link href="hill" className="md:w-[9%] block">
           <li className="hover:bg-primary truncate px-2">Hill Cipher</li>
         </Link>
-        <Link href="polyalphabetic" className="flex-1">
+        <Link href="polyalphabetic" className="md:w-[9%] block">
           <li className="hover:bg-primary truncate px-2">
             Polyalphabetic Cipher
           </li>
