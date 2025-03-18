@@ -8,6 +8,8 @@ import StoreProvider from "./StoreProvider";
 import HolyLoader from "holy-loader";
 import { SessionProvider } from "next-auth/react";
 import ReactQueryProvider from "./ReactQuertProvider";
+import { useColorMode } from "../components/ui/color-mode";
+
 export const metadata: Metadata = {
   title: "Learn Cryptography",
   description: "Built by Stefano",

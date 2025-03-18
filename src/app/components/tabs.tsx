@@ -20,40 +20,48 @@ const Tabs = () => {
       </div>
 
       <ul
-        className={`${isTabsOpen ? "block" : "hidden"} md:flex flex-col md:flex-row justify-between px-2 py-2`}
+        className={`${
+          isTabsOpen ? "block" : "hidden"
+        } md:flex flex-col md:flex-row justify-between px-2 py-2`}
       >
-        <Link href="introduction">
-          <li className="hover:bg-primary">Introduction</li>
+        <Link href="introduction" className="flex-1">
+          <li className="hover:bg-primary truncate px-2">Introduction</li>
         </Link>
-        <Link href="affine">
-          <li>Affine Cipher</li>
+        <Link href="affine" className="flex-1">
+          <li className="hover:bg-primary truncate px-2">Affine Cipher</li>
         </Link>
-        <Link href="caesar">
-          <li>Caesar Cipher</li>
+        <Link href="caesar" className="flex-1">
+          <li className="hover:bg-primary truncate px-2">Caesar Cipher</li>
         </Link>
-        <Link href="autokey">
-          <li>Auto Key Cipher</li>
+        <Link href="autokey" className="flex-1">
+          <li className="hover:bg-primary truncate px-2">Auto Key Cipher</li>
         </Link>
-        <Link href="mono-alphabetic">
-          <li>Monoalphabetic Cipher</li>
+        <Link href="mono-alphabetic" className="flex-1">
+          <li className="hover:bg-primary truncate px-2">
+            Monoalphabetic Cipher
+          </li>
         </Link>
-        <Link href="playfair">
-          <li>Playfair Cipher</li>
+        <Link href="playfair" className="flex-1">
+          <li className="hover:bg-primary truncate px-2">Playfair Cipher</li>
         </Link>
-        <Link href="homophonic">
-          <li>Homophonic Cipher</li>
+        <Link href="homophonic" className="flex-1">
+          <li className="hover:bg-primary truncate px-2">Homophonic Cipher</li>
         </Link>
-        <Link href="vigenere">
-          <li>Vigenere Cipher</li>
+        <Link href="vigenere" className="flex-1">
+          <li className="hover:bg-primary truncate px-2">Vigenere Cipher</li>
         </Link>
-        <Link href="polygram">
-          <li>Polygram Substitution Cipher</li>
+        <Link href="polygram" className="flex-1">
+          <li className="hover:bg-primary truncate px-2">
+            Polygram Substitution Cipher
+          </li>
         </Link>
-        <Link href="hill">
-          <li>Hill Cipher</li>
+        <Link href="hill" className="flex-1">
+          <li className="hover:bg-primary truncate px-2">Hill Cipher</li>
         </Link>
-        <Link href="polyalphabetic">
-          <li>Polyalphabetic Cipher</li>
+        <Link href="polyalphabetic" className="flex-1">
+          <li className="hover:bg-primary truncate px-2">
+            Polyalphabetic Cipher
+          </li>
         </Link>
       </ul>
     </div>
