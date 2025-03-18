@@ -1,3 +1,4 @@
+"use client";
 import {
   Box,
   Button,
@@ -7,15 +8,16 @@ import {
   Text,
 } from "@chakra-ui/react";
 import Link from "next/link";
-import { auth } from "../auth";
+import { useSession } from "next-auth/react";
 import { Avatar } from "@/components/ui/avatar";
 import { Toaster } from "@/components/ui/toaster";
 import Tabs from "./tabs";
 import { userLogin, userLogout } from "../../../actions/auth.action";
-import { ColorModeButton } from "@/components/ui/color-mode";
+import { ColorModeButton, useColorMode } from "@/components/ui/color-mode";
 
-async function NavigationBar() {
-  const session = await auth();
+function NavigationBar() {
+  const { colorMode } = useColorMode();
+  const { data: session } = useSession();
 
   // Trigger toast on successful login
 
@@ -42,13 +44,20 @@ async function NavigationBar() {
       >
         <Flex align="center" justify="space-between" w="full">
           <Link href="/">
-            <Image src="/Cryptograppy.svg" alt="logo" w="120px" h="35px" />
+            <Image
+              src={
+                colorMode === "dark" ? "/logo-dark.svg" : "/Cryptograppy.svg"
+              }
+              alt="logo"
+              w="120px"
+              h="35px"
+            />
           </Link>
 
           <Flex align="center" gap={{ base: 1, md: 4 }}>
+            <ColorModeButton color={{ base: "#04AA6D", _dark: "white" }} />
             {session && session.user ? (
               <>
-                <ColorModeButton />
                 <ChakraLink
                   as={Link}
                   href="/startup"
@@ -58,7 +67,6 @@ async function NavigationBar() {
                   py={2}
                   borderRadius="3xl"
                   color={{ base: "#04AA6D", _dark: "white" }}
-                  bg={{ base: "white", _dark: "black" }}
                   _hover={{ color: "black" }}
                 >
                   Get Started
@@ -66,15 +74,23 @@ async function NavigationBar() {
 
                 <ChakraLink
                   as={Link}
-                  href={`/user/${session?.id}`}
+                  href={`/user/${session?.user?.id}`}
                   fontStyle={"bold"}
                   color={"black"}
                   _hover={{ color: "#04AA6D" }}
                 >
-                  <Text fontStyle={"bold"}>{session.user.name}</Text>
+                  <Text
+                    fontStyle={"bold"}
+                    color={{ base: "black", _dark: "white" }}
+                  >
+                    {session.user.name}
+                  </Text>
                 </ChakraLink>
 
-                <Avatar src={session?.user?.image} name={session?.user?.name} />
+                <Avatar
+                  src={session?.user?.image ?? undefined}
+                  name={session?.user?.name ?? undefined}
+                />
 
                 <form action={userLogout} method="post">
                   <Button
@@ -83,8 +99,8 @@ async function NavigationBar() {
                     fontSize={{ base: "sm", md: "md" }}
                     px={4}
                     py={2}
-                    bg="#282A35"
-                    color="white"
+                    bg={{ base: "#282A35", _dark: "white" }}
+                    color={{ base: "white", _dark: "black" }}
                     borderRadius="3xl"
                     _hover={{ bg: "gray.600", color: "secondary" }}
                   >
@@ -103,6 +119,7 @@ async function NavigationBar() {
                   py={2}
                   borderRadius="3xl"
                   _hover={{ color: "gray.700" }}
+                  color={{ base: "#04AA6D", _dark: "white" }}
                 >
                   Get Started
                 </ChakraLink>

@@ -54,7 +54,7 @@ const HillCipher: React.FC = () => {
       keyMatrix.push(keyNumbers.slice(i * size, (i + 1) * size));
     }
 
-    let processedTextVector: number[];
+    let processedTextVector: number[] | null = null;
     if (isEncrypt) {
       const textVector: number[] = text
         .toUpperCase()
@@ -81,7 +81,10 @@ const HillCipher: React.FC = () => {
       }
       processedTextVector = multiplyMatrix(inverseMatrix, textVector, 26);
     }
-    setResult(processedTextVector.map((i) => alphabet[i]).join(""));
+
+    if (processedTextVector) {
+      setResult(processedTextVector.map((i) => alphabet[i]).join(""));
+    }
   };
 
   return (
@@ -174,7 +177,7 @@ const HillCipher: React.FC = () => {
               </button>
               <button
                 onClick={() => processText(false)}
-                className="w-1/2 bg-blue-600 text-white p-3 rounded-md font-semibold hover:bg-blue-700"
+                className="w-1/2 bg-gray-600 text-white p-3 rounded-md font-semibold hover:bg-gray-700"
               >
                 Decrypt
               </button>
